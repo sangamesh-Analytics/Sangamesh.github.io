@@ -1383,4 +1383,22 @@ section {
 
 .dark-section .section-header p {
   color: rgba(255, 255, 255, 0.65);
+
 }
+
+/* Scroll reveal base state */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Activated reveal */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
