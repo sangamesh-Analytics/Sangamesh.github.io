@@ -400,6 +400,9 @@ a {
   }
 }
 
+body {
+  background: red !important;
+}
 
 /* =========================
    ABOUT SECTION REFINEMENT
@@ -1462,6 +1465,7 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
