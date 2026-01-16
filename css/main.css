@@ -71,10 +71,7 @@ a {
 }
 
 /* =========================
-   HERO SECTION (FINAL)
-========================= */
-/* =========================
-   HERO SECTION
+   HERO SECTION (FINAL CLEAN)
 ========================= */
 
 .hero {
@@ -83,10 +80,17 @@ a {
   display: flex;
   align-items: center;
   padding: 0 6rem;
+  background:
+    radial-gradient(
+      circle at right,
+      rgba(56, 189, 248, 0.12),
+      transparent 60%
+    ),
+    var(--bg-primary);
   overflow: hidden;
 }
 
-/* subtle background glow */
+/* Soft glow (desktop only feel) */
 .hero::after {
   content: "";
   position: absolute;
@@ -102,35 +106,14 @@ a {
   z-index: 0;
 }
 
-.hero-content,
-.hero-photo {
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0 6rem;
-  position: relative;
-  overflow: hidden;
-}
-
+/* Layout */
 .hero-inner {
   width: 100%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 2.8rem;
+  gap: 3rem;
+  z-index: 1;
 }
 
 /* =========================
@@ -151,7 +134,7 @@ a {
 }
 
 .hero-name {
-  font-size: 4.1rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.08;
   color: #f8fafc;
@@ -165,18 +148,16 @@ a {
   margin-bottom: 1rem;
 }
 
-/* Value pill */
 .hero-value {
   display: inline-block;
   font-size: 0.85rem;
-  padding: 0.35rem 0.9rem;
+  padding: 0.4rem 1rem;
   border-radius: 999px;
   background: rgba(99, 102, 241, 0.14);
   color: #c7d2fe;
   margin-bottom: 1.6rem;
 }
 
-/* Description */
 .hero-description {
   font-size: 1rem;
   line-height: 1.7;
@@ -185,22 +166,19 @@ a {
   margin-bottom: 2rem;
 }
 
-/* CTA + Socials */
+/* Actions */
 .hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .hero-btn {
+  display: inline-block;
   padding: 0.8rem 1.8rem;
-  border-radius: 8px;
+  border-radius: 999px;
+  background: #60a5fa;
+  color: #0b1023;
   font-size: 0.95rem;
   font-weight: 500;
-  text-decoration: none;
-  color: #0b1023;
-  background: #60a5fa;
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
@@ -209,6 +187,7 @@ a {
   transform: translateY(-2px);
 }
 
+/* Socials */
 .hero-socials {
   display: flex;
   gap: 1.2rem;
@@ -228,30 +207,10 @@ a {
 /* =========================
    HERO PHOTO
 ========================= */
-/* =========================
-   HERO LAYOUT FIX
-========================= */
 
-.hero {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 4.5rem; /* controls distance between text and image */
-}
-
-/* ---------- TEXT ---------- */
-.hero-content {
-  max-width: 620px;
-  margin-top: -3rem; /* pulls content up subtly */
-}
-
-/* ---------- PHOTO ---------- */
 .hero-photo {
-  position: relative;
-  margin-left: 10rem; /* THIS shifts image right */
-  flex-shrink: 0;
-  margin-top: -5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-photo img {
@@ -259,68 +218,23 @@ a {
   max-width: 320px;
   border-radius: 16px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-  transition: transform 0.4s ease;
 }
 
-.hero-photo img:hover {
-  transform: translateY(-4px);
-}
+/* =========================
+   MOBILE (FINAL & SIMPLE)
+========================= */
 
-/* ---------- OPTION 1: VERTICAL DIVIDER ---------- */
-.hero::before {
-  content: "";
-  position: absolute;
-  left: 55%;
-  top: 15%;
-  width: 1px;
-  height: 70%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255,255,255,0.14),
-    transparent
-  );
-  z-index: 0;
-}
-
-/* ---------- SOFT GLOW (kept) ---------- */
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -120px;
-  top: 20%;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(
-    circle,
-    rgba(99,102,241,0.12),
-    transparent 70%
-  );
-  z-index: 0;
-}
-
-/* Ensure content stays above effects */
-.hero-content,
-.hero-photo {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-text,
-.hero-photo {
-  animation: fadeUp 0.6s ease-out both;
-}
-
-
-/* ============================
-   HERO – MOBILE FIX (FINAL)
-   ============================ */
 @media (max-width: 768px) {
 
   .hero {
-    min-height: auto;
     padding: 3.5rem 1.5rem 3rem;
+    min-height: auto;
+    background: var(--bg-primary);
     text-align: center;
+  }
+
+  .hero::after {
+    display: none;
   }
 
   .hero-inner {
@@ -332,49 +246,40 @@ a {
   .hero-content {
     max-width: 100%;
     align-items: center;
-    display: flex;
-    flex-direction: column;
   }
 
   .hero-name {
-    font-size: 2.05rem;
+    font-size: 2.1rem;
     line-height: 1.15;
   }
 
   .hero-role {
     font-size: 1rem;
-    margin-bottom: 0.8rem;
   }
 
   .hero-value {
     font-size: 0.9rem;
-    padding: 0.6rem 1rem;
     margin-bottom: 1rem;
-    max-width: 90%;
+    max-width: 92%;
   }
 
   .hero-description {
     font-size: 0.95rem;
     max-width: 92%;
-    margin-bottom: 1.4rem;
-  }
-
-  .hero-actions {
-    margin-bottom: 1.2rem;
   }
 
   .hero-socials {
     justify-content: center;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
   }
 
   .hero-photo {
-    margin-top: 1.4rem;
+    margin-top: 1.6rem;
   }
 
   .hero-photo img {
-    width: 80%;
     max-width: 260px;
+    width: 80%;
     border-radius: 14px;
   }
 }
@@ -1363,6 +1268,7 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
