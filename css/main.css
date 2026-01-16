@@ -1305,71 +1305,7 @@ body {
   padding-top: 6.5rem;
 }
 
-/* ================= HERO ================= */
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6.5rem 6rem 4rem;
-  gap: 4rem;
-
-  background: radial-gradient(
-    circle at top right,
-    rgba(99, 102, 241, 0.08),
-    transparent 45%
-  );
-}
-
-.hero-content {
-  max-width: 520px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.4rem;
-}
-
-.hero-content h2 {
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 1.4rem;
-}
-
-.hero-content p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2.2rem;
-}
-
-.hero-btn {
-  display: inline-block;
-  padding: 0.7rem 1.6rem;
-  border-radius: 999px;
-  background: #6366f1;
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.hero-btn:hover {
-  background: #4f46e5;
-  transform: translateY(-2px);
-}
-
-/* Photo */
-.hero-photo img {
-  width: 280px;
-  border-radius: 16px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-}
 
 @media (max-width: 900px) {
   .hero {
@@ -1427,6 +1363,7 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
