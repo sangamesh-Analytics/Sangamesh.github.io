@@ -335,6 +335,17 @@ a {
   }
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Mobile */
 @media (max-width: 600px) {
   .hero {
@@ -1487,6 +1498,7 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
